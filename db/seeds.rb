@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ProduceFamily.destroy_all
+vegetable = ProduceFamily.create(family: 'Vegetable')
+fruit = ProduceFamily.create(family: 'Fruit')
+other = ProduceFamily.create(family: 'Other')
+
+Produce.destroy_all
+Produce.create(name: 'carrot', produce_family: vegetable)
+Produce.create(name: 'mango', produce_family: fruit)
+Produce.create(name: 'dandelion', produce_family: other)
