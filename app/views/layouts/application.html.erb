@@ -12,18 +12,28 @@
 
   <body>
     <header><h1>Farmers Marketplace</h1>
-      <% if notice %>
-        <p class="notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert"><%= alert %></p>
-      <% end %>
       <nav>
         <button>Home</button>
         <button>Profile</button>
-        <button>Sign-up/Login</button>
+        <span>
+        <% if user_signed_in? %>
+          <%= current_user.email %>
+          |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", user_session_path%>
+          |
+          <%= link_to "Sign-Up", new_user_registration_path %>
+        <% end %>
+        </span>
       </nav>
     </header>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,5 +1,8 @@
 class ListingsController < ApplicationController
 
+    ## Authenticate user before any action
+    #before_action :authenticate_user!
+
     def index
 
     end
