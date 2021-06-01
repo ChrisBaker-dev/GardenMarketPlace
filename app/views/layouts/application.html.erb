@@ -11,12 +11,19 @@
   </head>
 
   <body>
-    <header><h1>Farmers Marketplace</h1></header>
-    <nav>
-      <button>Home</button>
-      <button>Profile</button>
-      <button>Sign-up/Login</button>
-    </nav>
+    <header><h1>Farmers Marketplace</h1>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <nav>
+        <button>Home</button>
+        <button>Profile</button>
+        <button>Sign-up/Login</button>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
