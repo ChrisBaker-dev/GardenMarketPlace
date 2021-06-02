@@ -1,0 +1,18 @@
+
+<%= form_with model: @farmer, local: true do |f| %>
+    <p>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+    </p>
+    <p>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+    </p>
+    <p>
+        <%= f.label :farm_name %>
+        <%= f.text_field :farm_name %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

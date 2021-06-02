@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
     #before_action :authenticate_user!
 
     def index
+        @produce = Produce.all
 
     end
 

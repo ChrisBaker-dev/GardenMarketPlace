@@ -1,3 +1,3 @@
 class ProduceFamily < ApplicationRecord
-    has_many :produces, dependant: :destroy
+    has_many :produces, dependent: :destroy
 end
