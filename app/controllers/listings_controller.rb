@@ -5,7 +5,6 @@ class ListingsController < ApplicationController
 
     def index
         @produce = Produce.all
-        @id = current_user.id
 
     end
 
