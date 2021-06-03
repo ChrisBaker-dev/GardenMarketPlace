@@ -1,0 +1,25 @@
+<%= simple_form_for @listing, local: true do |f| %>
+    <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :description %>
+        <%= f.text_area :description, size: '40x10' %>
+    </p>
+    <p>
+        <%= f.label :produce %>
+        <%= f.collection_select :produce_id, @produce, :id, :name %>
+    </p>
+    <p>
+        <%= f.label :qty %>
+        <%= f.text_field :qty, as: :integer %>
+    </p>
+    <p>
+        <%= f.label :price %>
+        <%= f.text_field :price, as: :decimal, hint: 'Must be a number' %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

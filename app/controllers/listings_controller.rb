@@ -5,11 +5,13 @@ class ListingsController < ApplicationController
 
     def index
         @produce = Produce.all
+        @id = current_user.id
 
     end
 
     def new
-
+        @listing = Listing.new
+        @produce = Produce.order(:name)
     end
 
     def update
@@ -25,6 +27,11 @@ class ListingsController < ApplicationController
     end
 
     def show
+
+    end
+
+    def create
+        render action: 'index'
 
     end
 
